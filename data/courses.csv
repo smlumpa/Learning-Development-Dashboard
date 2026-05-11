@@ -1,0 +1,11 @@
+course_id,course_name,course_category,provider,mandatory,estimated_hours
+C001,Leadership Essentials,Leadership,Internal,Yes,6
+C002,Power BI Dashboarding,Data & Analytics,Coursera,No,7
+C003,Advanced Excel,Data & Analytics,Coursera,Yes,5
+C004,Cybersecurity Awareness,Compliance,Coursera,No,3
+C005,Customer Communication,Customer Service,Coursera,No,4
+C006,Project Management Basics,Project Management,Internal,Yes,6
+C007,Diversity & Inclusion,Compliance,Internal,Yes,2
+C008,Data Protection Training,Compliance,External Trainer,Yes,3
+C009,Sales Strategy,Sales,Coursera,Yes,5
+C010,Conflict Resolution,People Skills,External Trainer,Yes,4
