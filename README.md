@@ -102,7 +102,7 @@ learning-development-dashboard/
   </a>
 </p>
 
-![Customer Sales & Retention Dashboard](images/dashboard_screenshot.png)
+![Customer Sales & Retention Dashboard](images/laptop_mockup.png.png)
 
 ## Author
 
