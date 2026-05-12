@@ -22,8 +22,7 @@ Organisations often struggle to understand:
 
 ## Dashboard Preview
 
-Add your dashboard screenshot here:
-
+![Customer Sales & Retention Dashboard](images/dashboard_screenshot.png)
 ```markdown
 <img src="images/dashboard_screenshot.png" width="1000">
 ```
