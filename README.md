@@ -95,8 +95,11 @@ learning-development-dashboard/
 
 ## Interactive Dashboard Preview
 
-![Customer Sales & Retention Dashboard](images/laptop_mockup.png.png)
-
+<p align="center">
+  <a href="https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9">
+    <img src="images/laptop_mockup.png" width="700">
+  </a>
+</p>
 ## Author
 
 Sophia Lumpa  
