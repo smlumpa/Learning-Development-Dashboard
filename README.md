@@ -1,6 +1,16 @@
 # Learning & Development Dashboard
 ### Power BI | DAX | HR Analytics | Training Performance
 
+<p align="center">
+
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Python](https://img.shields.io/badge/Python-Data%20Cleaning%20%26%20EDA-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![BigQuery](https://img.shields.io/badge/BigQuery-Data%20Processing-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+![DAX](https://img.shields.io/badge/DAX-Measures-1D4ED8?style=for-the-badge)
+![Analytics](https://img.shields.io/badge/Financial-Analytics-0F766E?style=for-the-badge)
+
+</p>
+
 ![Power BI](https://img.shields.io/badge/PowerBI-Dashboard-yellow)
 ![DAX](https://img.shields.io/badge/DAX-Measures-orange)
 ![Analytics](https://img.shields.io/badge/Analytics-HR%20Insights-teal)
