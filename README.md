@@ -89,6 +89,24 @@ learning-development-dashboard/
 ├── README.md
 └── LICENSE
 
+## How to Use This Project
+
+1. Upload the CSV files in `data/` to BigQuery.
+2. Run the SQL scripts in the `sql/` folder.
+3. Connect Power BI to the BigQuery views.
+4. Recreate or review the dashboard visuals.
+5. Use the DAX measures in `docs/dax_measures.md`.
+
+## Links
+
+🔗 **GitHub Repository**  
+https://github.com/smlumpa/Learning-Development-Dashboard
+
+📊 **Live Power BI Dashboard**  
+[View Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9)
+
+---
+
 ```
 
 ## Interactive Dashboard Preview
