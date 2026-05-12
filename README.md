@@ -100,6 +100,7 @@ learning-development-dashboard/
     <img src="images/laptop_mockup.png" width="700">
   </a>
 </p>
+
 ## Author
 
 Sophia Lumpa  
