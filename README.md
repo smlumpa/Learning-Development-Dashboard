@@ -114,14 +114,6 @@ https://github.com/smlumpa/Learning-Development-Dashboard
 
 ---
 
-## Interactive Dashboard Preview
-
-<p align="center">
-  <a href="https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9">
-    <img src="images/laptop_mockup.png" width="700">
-  </a>
-</p>
-
 ## Author
 
 Sophia Lumpa  
