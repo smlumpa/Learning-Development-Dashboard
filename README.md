@@ -94,6 +94,7 @@ learning-development-dashboard/
 ```
 
 ## Interactive Dashboard Preview
+    <img src="images/laptop_mockup.png" width="700">
 
 <p align="center">
   <a href="https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9">
