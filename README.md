@@ -45,8 +45,6 @@ Organisations often struggle to understand:
 
 ## Data Pipeline
 
-![Data Pipeline](images/pipeline_diagram.svg)
-
 ```text
 CSV Data → Power BI Data Model → DAX Measures → Interactive L&D Dashboard
 ```
