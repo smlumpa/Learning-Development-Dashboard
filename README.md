@@ -11,11 +11,6 @@
 
 </p>
 
-![Power BI](https://img.shields.io/badge/PowerBI-Dashboard-yellow)
-![DAX](https://img.shields.io/badge/DAX-Measures-orange)
-![Analytics](https://img.shields.io/badge/Analytics-HR%20Insights-teal)
-![Dashboard](https://img.shields.io/badge/Dashboard-L%26D%20Performance-blue)
-
 ## Project Overview
 
 Interactive Learning & Development dashboard designed to analyse employee training performance, completion rates, training hours, engagement, and course outcomes across departments.
