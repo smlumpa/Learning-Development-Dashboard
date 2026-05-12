@@ -11,6 +11,13 @@
 
 </p>
 
+
+<p align="center">
+  <a href="https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9">
+    <img src="images/laptop_mockup.png" width="400">
+  </a>
+</p>
+
 ## Project Overview
 
 Interactive Learning & Development dashboard designed to analyse employee training performance, completion rates, training hours, engagement, and course outcomes across departments.
