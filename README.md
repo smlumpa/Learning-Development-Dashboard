@@ -89,6 +89,7 @@ learning-development-dashboard/
 ├── README.md
 └── LICENSE
 
+```
 
 ## How to Use This Project
 
@@ -98,7 +99,6 @@ learning-development-dashboard/
 4. Recreate or review the dashboard visuals.
 5. Use the DAX measures in `docs/dax_measures.md`.
 
-```
 ## Links
 
 🔗 **GitHub Repository**  
@@ -108,8 +108,6 @@ https://github.com/smlumpa/Learning-Development-Dashboard
 [View Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9)
 
 ---
-
-
 
 ## Interactive Dashboard Preview
 
