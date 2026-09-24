@@ -1,127 +1,127 @@
 # Learning & Development Dashboard
-### Power BI | DAX | HR Analytics | Training Performance
 
-<p align="center">
+**Power BI · DAX · BigQuery · SQL · Learning Analytics**
 
-![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Python](https://img.shields.io/badge/Python-Data%20Cleaning%20%26%20EDA-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![BigQuery](https://img.shields.io/badge/BigQuery-Data%20Processing-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
-![DAX](https://img.shields.io/badge/DAX-Measures-1D4ED8?style=for-the-badge)
-![Analytics](https://img.shields.io/badge/Financial-Analytics-0F766E?style=for-the-badge)
+An interactive workforce learning dashboard that analyses course participation,
+completion, scores, training hours and costs across departments.
 
-</p>
-<br>
+> **Data declaration:** This project uses synthetic sample employee and training
+> data. Employee names are fictitious labels, and no confidential employer,
+> client or learner information is included.
 
 <p align="center">
   <a href="https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9">
-    <img src="images/laptop_mockup.png" width="400">
+    <img src="images/laptop_mockup.png" width="500" alt="Learning and Development Power BI dashboard">
   </a>
 </p>
 
-## Project Overview
+## Business questions
 
-Interactive Learning & Development dashboard designed to analyse employee training performance, completion rates, training hours, engagement, and course outcomes across departments.
+- What proportion of training enrolments are completed?
+- Which departments have the strongest completion rates and scores?
+- Which courses have high participation but comparatively low completion?
+- How are training hours and costs distributed?
+- Where may additional learning support or follow-up be useful?
 
-This project demonstrates how training data can be transformed into actionable insights that help HR and business leaders monitor learning effectiveness, identify participation gaps, and improve workforce development decisions.
+## Verified headline findings
 
-## Business Problem
+The figures below were reproduced from the repository's three CSV files.
 
-Organisations often struggle to understand:
-- which departments are completing training,
-- how training performance varies across teams,
-- which courses have stronger engagement,
-- and where learning interventions may be needed.
+| Metric | Result |
+|---|---:|
+| Employees represented | 80 |
+| Courses | 10 |
+| Training records | 359 |
+| Completed training records | 226 |
+| Overall completion rate | 63.0% |
+| Average completed-course score | 80.7 |
+| Recorded training hours | 1,126 |
+| Total recorded training cost | £89,355.99 |
 
-## Dashboard Preview
+Sales had the highest departmental completion rate at **66.1%**, while
+Marketing had the lowest at **60.0%**. Finance achieved the highest average
+score among completed records at **83.8**.
 
-![Customer Sales & Retention Dashboard](images/dashboard_screenshot.png)
+Cybersecurity Awareness had the highest course completion rate at **83.7%**.
+Data Protection Training had the lowest at **46.3%**, followed by Power BI
+Dashboarding at **51.5%**. These findings are descriptive results from synthetic
+data and are not claims about a real organisation.
 
-## Tools Used
+## Dashboard preview
 
-- Power BI
-- DAX
-- Excel / CSV
-- Data modelling
-- HR analytics
-- Dashboard design
+![Learning and Development dashboard](images/dashboard_screenshot.png)
 
-## Key Features
+## Dashboard features
 
-- Completion rate tracking
-- Average score analysis
-- Total training hours
-- Department-level performance comparison
-- Training completion over time
-- Top training courses
-- Interactive slicers by department, course, and date
+- Completion-rate tracking
+- Average completed-course score
+- Total training hours and costs
+- Department and course comparisons
+- Completion trends over time
+- Interactive department, course and date filters
 
-## Data Pipeline
+## Data pipeline
 
 ```text
-CSV Data → Power BI Data Model → DAX Measures → Interactive L&D Dashboard
+Synthetic CSV data → BigQuery views → Power BI model → DAX measures → Dashboard
 ```
 
-## Dataset
+## Data model
 
-The project uses three source tables:
+- `employees.csv` — employee, department, job level and join date
+- `courses.csv` — course, category, provider, mandatory status and duration
+- `training_records.csv` — enrolment status, scores, hours, feedback and costs
 
-- `employees.csv`
-- `courses.csv`
-- `training_records.csv`
-
-## Dashboard Metrics
-
-- Completion Rate
-- Average Score
-- Total Training Hours
-- Training Participants
-- Completed Trainings
-- Training Completion Over Time
-- Training Performance by Department
-- Training Hours by Department
-- Top Training Courses
-
-## Key Insights
-
-- Training completion rates varied across departments.
-- Higher participation was linked to stronger average course performance.
-- Certain departments required additional visibility into incomplete training.
-- Training hours were concentrated across a small number of courses.
-- Interactive reporting improved visibility into learning outcomes and engagement.
-
-## Repository Structure
+The three tables form a simple star-style model:
 
 ```text
-learning-development-dashboard/
-├── data/
+Employees (1) ─── (*) Training Records (*) ─── (1) Courses
+```
+
+See [the data dictionary](docs/data_dictionary.md) and
+[validation report](docs/validation_report.md).
+
+## Repository structure
+
+```text
 ├── dashboard/
+│   └── L&D dashboard.pbix
+├── data/
+│   ├── employees.csv
+│   ├── courses.csv
+│   ├── training_records.csv
+│   └── learning_development_dataset.xlsx
 ├── docs/
+│   ├── dax_measures.md
+│   ├── data_dictionary.md
+│   └── validation_report.md
 ├── images/
 ├── sql/
-├── README.md
-└── LICENSE
-
+│   ├── 01_create_training_records_view.sql
+│   ├── 02_create_training_metrics_view.sql
+│   └── 03_sql_showcase.sql
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
 
-## How to Use This Project
+## Reproduce the analysis
 
-1. Upload the CSV files in `data/` to BigQuery.
-2. Run the SQL scripts in the `sql/` folder.
-3. Connect Power BI to the BigQuery views.
-4. Recreate or review the dashboard visuals.
-5. Use the DAX measures in `docs/dax_measures.md`.
+1. Review the source tables in `data/`.
+2. Upload the three CSV files to a BigQuery dataset.
+3. Replace `your-project` in the SQL scripts with your Google Cloud project ID.
+4. Run the scripts in numerical order.
+5. Connect Power BI to the resulting tables or views.
+6. Create the relationships shown above.
+7. Add the documented measures from `docs/dax_measures.md`.
+8. Compare the results with `docs/validation_report.md`.
 
-## Links
+## Dashboard access
 
-🔗 **GitHub Repository**  
-https://github.com/smlumpa/Learning-Development-Dashboard
-
-📊 **Live Power BI Dashboard**  
-[View Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9)
-
----
+[Open the interactive Power BI dashboard](https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9)
 
 ## Author
 
-Sophia Lumpa  
-Business Intelligence & Operations Analyst
+**Sophia Lumpa**  
+Business Intelligence & Operations Analyst  
+[Portfolio](https://www.virtavis.com/) · [GitHub](https://github.com/smlumpa)
