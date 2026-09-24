@@ -1,6 +1,6 @@
 # Learning & Development Dashboard
 
-**Power BI · DAX · BigQuery · SQL · Excel · Learning Analytics**
+**Power BI · Power Query · DAX · Excel · Learning Analytics**
 
 An interactive workforce learning dashboard for monitoring training completion, scores, completed training hours and participation across departments and courses.
 
@@ -53,15 +53,15 @@ The figures describe the portfolio dashboard dataset and should not be interpret
 
 ![Learning and Development data pipeline](images/pipeline_diagram.svg)
 
-SQL and BigQuery were used for data preparation and analytical querying. The curated dashboard extract was exported to Excel and loaded into Power BI, where Power Query applied data types and DAX supplied the presentation measures.
-
 ```text
-Source data → SQL / BigQuery preparation → Curated Excel extract → Power BI model → DAX measures → Dashboard
+Excel source → Power Query preparation → Power BI model → DAX measures → Interactive dashboard
 ```
 
-## Power BI model
+The project did not use SQL or BigQuery.
 
-The published dashboard imports an Excel worksheet named `Training data` into a Power BI table called `Training_data`. The exported VPAX therefore shows the final dashboard import layer, rather than every upstream preparation step.
+## Technical approach
+
+The model imports an Excel worksheet named `Training data` into a single Power BI table called `Training_data`. Power Query promotes the headers and assigns appropriate text, date and whole-number data types.
 
 DAX measures calculate completion rate, average completed-training score, completed training hours, completed training count and distinct participants. Power BI's automatically generated local date table supports time-based filtering.
 
@@ -77,34 +77,20 @@ DAX measures calculate completion rate, average completed-training score, comple
 - `Training_Cost`
 - `Feedback_Rating`
 
-## Supporting analytical files
-
-The repository retains the SQL, BigQuery-oriented scripts and supporting sample data used to evidence the wider data-preparation workflow. Their expanded record counts should not be substituted for the verified headline values displayed in the published 25-row Power BI model.
-
-See the [verified DAX measures](docs/dax_measures.md), [data dictionary](docs/data_dictionary.md) and [model validation report](docs/validation_report.md).
+See the [verified DAX measures](docs/dax_measures.md) and [model validation report](docs/validation_report.md).
 
 ## Repository structure
 
 ```text
 ├── dashboard/
 │   └── L&D dashboard.pbix
-├── data/
-│   ├── courses.csv
-│   ├── employees.csv
-│   ├── training_records.csv
-│   └── learning_development_dataset.xlsx
 ├── docs/
-│   ├── data_dictionary.md
 │   ├── dax_measures.md
 │   └── validation_report.md
 ├── images/
 │   ├── dashboard_screenshot.png
 │   ├── laptop_mockup.png
 │   └── pipeline_diagram.svg
-├── sql/
-│   ├── 01_create_training_records_view.sql
-│   ├── 02_create_training_metrics_view.sql
-│   └── 03_sql_showcase.sql
 ├── .gitignore
 ├── LICENSE
 └── README.md
