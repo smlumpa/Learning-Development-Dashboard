@@ -1,6 +1,6 @@
 # Learning & Development Dashboard
 
-**Power BI · DAX · Excel · Learning Analytics**
+**Power BI · DAX · BigQuery · SQL · Excel · Learning Analytics**
 
 An interactive workforce learning dashboard for monitoring training completion, scores, completed training hours and participation across departments and courses.
 
@@ -25,7 +25,7 @@ These figures were verified against the Power BI model exported on 24 September 
 | Departments | 4 |
 | Distinct course names | 24 |
 
-The figures describe the portfolio dataset and should not be interpreted as results from a named organisation.
+The figures describe the portfolio dashboard dataset and should not be interpreted as results from a named organisation.
 
 ## Business questions
 
@@ -49,13 +49,21 @@ The figures describe the portfolio dataset and should not be interpreted as resu
 - Completion trends over time
 - Department, course and time-period filters
 
-## Technical approach
+## Data pipeline
 
-The model imports an Excel worksheet named `Training data` into a single Power BI table called `Training_data`. Power Query promotes the headers and assigns appropriate text, date and whole-number data types.
+![Learning and Development data pipeline](images/pipeline_diagram.svg)
+
+SQL and BigQuery were used for data preparation and analytical querying. The curated dashboard extract was exported to Excel and loaded into Power BI, where Power Query applied data types and DAX supplied the presentation measures.
+
+```text
+Source data → SQL / BigQuery preparation → Curated Excel extract → Power BI model → DAX measures → Dashboard
+```
+
+## Power BI model
+
+The published dashboard imports an Excel worksheet named `Training data` into a Power BI table called `Training_data`. The exported VPAX therefore shows the final dashboard import layer, rather than every upstream preparation step.
 
 DAX measures calculate completion rate, average completed-training score, completed training hours, completed training count and distinct participants. Power BI's automatically generated local date table supports time-based filtering.
-
-This is a compact single-table analytical model; it does not use BigQuery, SQL or a separate employee/course star schema.
 
 ## Model fields
 
@@ -69,19 +77,34 @@ This is a compact single-table analytical model; it does not use BigQuery, SQL o
 - `Training_Cost`
 - `Feedback_Rating`
 
-See the [verified DAX measures](docs/dax_measures.md) and [model validation report](docs/validation_report.md).
+## Supporting analytical files
+
+The repository retains the SQL, BigQuery-oriented scripts and supporting sample data used to evidence the wider data-preparation workflow. Their expanded record counts should not be substituted for the verified headline values displayed in the published 25-row Power BI model.
+
+See the [verified DAX measures](docs/dax_measures.md), [data dictionary](docs/data_dictionary.md) and [model validation report](docs/validation_report.md).
 
 ## Repository structure
 
 ```text
 ├── dashboard/
 │   └── L&D dashboard.pbix
+├── data/
+│   ├── courses.csv
+│   ├── employees.csv
+│   ├── training_records.csv
+│   └── learning_development_dataset.xlsx
 ├── docs/
+│   ├── data_dictionary.md
 │   ├── dax_measures.md
 │   └── validation_report.md
 ├── images/
 │   ├── dashboard_screenshot.png
-│   └── laptop_mockup.png
+│   ├── laptop_mockup.png
+│   └── pipeline_diagram.svg
+├── sql/
+│   ├── 01_create_training_records_view.sql
+│   ├── 02_create_training_metrics_view.sql
+│   └── 03_sql_showcase.sql
 ├── .gitignore
 ├── LICENSE
 └── README.md
