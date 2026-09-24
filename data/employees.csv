@@ -1,0 +1,81 @@
+employee_id,employee_name,department,job_level,join_date
+E001,Employee 1,Sales,Officer,2023-02-09
+E002,Employee 2,Finance,Associate,2022-03-16
+E003,Employee 3,Operations,Associate,2023-01-10
+E004,Employee 4,Operations,Associate,2023-06-04
+E005,Employee 5,IT,Associate,2022-03-30
+E006,Employee 6,Marketing,Senior Manager,2022-03-13
+E007,Employee 7,IT,Associate,2023-07-19
+E008,Employee 8,Marketing,Associate,2023-08-03
+E009,Employee 9,HR,Officer,2023-10-08
+E010,Employee 10,Finance,Associate,2023-08-14
+E011,Employee 11,Operations,Senior Manager,2022-02-20
+E012,Employee 12,IT,Associate,2023-07-25
+E013,Employee 13,IT,Manager,2023-03-06
+E014,Employee 14,IT,Associate,2023-08-08
+E015,Employee 15,Sales,Officer,2022-04-16
+E016,Employee 16,Operations,Officer,2023-01-17
+E017,Employee 17,HR,Associate,2023-08-01
+E018,Employee 18,HR,Officer,2023-05-24
+E019,Employee 19,Finance,Senior Manager,2022-11-18
+E020,Employee 20,Marketing,Senior Manager,2023-01-06
+E021,Employee 21,Sales,Officer,2022-07-04
+E022,Employee 22,Finance,Officer,2022-03-25
+E023,Employee 23,Operations,Manager,2023-06-22
+E024,Employee 24,Marketing,Manager,2023-04-05
+E025,Employee 25,Sales,Associate,2022-05-01
+E026,Employee 26,Operations,Senior Manager,2022-06-18
+E027,Employee 27,Sales,Officer,2023-05-16
+E028,Employee 28,Marketing,Associate,2023-11-16
+E029,Employee 29,HR,Manager,2022-12-15
+E030,Employee 30,Finance,Manager,2023-09-01
+E031,Employee 31,Marketing,Senior Manager,2022-03-12
+E032,Employee 32,HR,Manager,2023-05-01
+E033,Employee 33,Finance,Associate,2022-03-04
+E034,Employee 34,Finance,Manager,2023-10-25
+E035,Employee 35,Operations,Senior Manager,2022-10-19
+E036,Employee 36,Finance,Senior Manager,2023-11-16
+E037,Employee 37,Sales,Associate,2023-04-18
+E038,Employee 38,Sales,Officer,2023-09-18
+E039,Employee 39,HR,Senior Manager,2022-03-02
+E040,Employee 40,IT,Manager,2022-05-13
+E041,Employee 41,Finance,Officer,2023-02-12
+E042,Employee 42,Marketing,Senior Manager,2022-03-24
+E043,Employee 43,IT,Senior Manager,2023-02-16
+E044,Employee 44,Operations,Manager,2022-05-21
+E045,Employee 45,Marketing,Manager,2023-03-02
+E046,Employee 46,Sales,Senior Manager,2022-08-25
+E047,Employee 47,IT,Associate,2022-06-30
+E048,Employee 48,IT,Officer,2023-11-06
+E049,Employee 49,IT,Associate,2023-05-12
+E050,Employee 50,Operations,Officer,2022-09-27
+E051,Employee 51,Sales,Associate,2022-05-30
+E052,Employee 52,Marketing,Manager,2023-09-17
+E053,Employee 53,Operations,Manager,2022-05-09
+E054,Employee 54,Finance,Associate,2023-04-13
+E055,Employee 55,Finance,Senior Manager,2023-02-12
+E056,Employee 56,Marketing,Senior Manager,2022-04-17
+E057,Employee 57,Marketing,Senior Manager,2022-03-05
+E058,Employee 58,IT,Associate,2022-08-02
+E059,Employee 59,Marketing,Officer,2022-04-23
+E060,Employee 60,Sales,Associate,2022-04-15
+E061,Employee 61,HR,Officer,2023-07-04
+E062,Employee 62,HR,Manager,2023-09-21
+E063,Employee 63,HR,Associate,2022-08-01
+E064,Employee 64,Operations,Senior Manager,2022-06-02
+E065,Employee 65,Finance,Manager,2022-12-22
+E066,Employee 66,Operations,Manager,2023-05-01
+E067,Employee 67,HR,Associate,2023-05-15
+E068,Employee 68,Marketing,Senior Manager,2023-05-11
+E069,Employee 69,Sales,Associate,2022-05-28
+E070,Employee 70,HR,Manager,2022-09-29
+E071,Employee 71,Marketing,Officer,2023-06-13
+E072,Employee 72,HR,Officer,2023-06-25
+E073,Employee 73,Sales,Officer,2023-07-11
+E074,Employee 74,HR,Manager,2023-10-21
+E075,Employee 75,HR,Manager,2023-06-15
+E076,Employee 76,Sales,Officer,2022-12-31
+E077,Employee 77,IT,Manager,2023-10-14
+E078,Employee 78,IT,Officer,2022-09-03
+E079,Employee 79,Marketing,Officer,2022-07-24
+E080,Employee 80,Operations,Senior Manager,2022-12-31
