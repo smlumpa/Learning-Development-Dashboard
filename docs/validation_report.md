@@ -1,48 +1,47 @@
-# Data validation report
+# Power BI model validation report
 
-## Dataset status
+## Verification source
 
-This repository uses **synthetic sample data**. Employee names are fictitious
-labels and the files do not contain confidential employer, client or learner
-information.
+The model structure and measures were checked against `TRAINING DATA final.vpax`, exported on 24 September 2026. Dashboard headline values were cross-checked against the published portfolio screenshot.
 
-## Record counts
+## Model structure
 
-| Table | Rows |
+| Item | Verified value |
 |---|---:|
-| Employees | 80 |
-| Courses | 10 |
-| Training records | 359 |
+| Imported model table | `Training_data` |
+| Rows | 25 |
+| Distinct employee IDs | 25 |
+| Departments | 4 |
+| Distinct course names | 24 |
+| Completion-status values | 2 |
 
-All 359 training records match an employee and a course in the supplied
-dimension tables.
+The model imports an Excel worksheet named `Training data`. It is a single-table Power BI model.
 
-## Verified metrics
+## Verified headline metrics
 
-| Metric | Result |
-|---|---:|
-| Completed | 226 |
-| In Progress | 73 |
-| Not Started | 60 |
-| Completion rate | 62.95% |
-| Average score for completed records | 80.69 |
-| Recorded training hours | 1,126 |
-| Training participants | 80 |
-| Total recorded training cost | £89,355.99 |
+| Metric | Result | Definition |
+|---|---:|---|
+| Participants | 25 | Distinct `Employee_ID` |
+| Completed trainings | 22 | Rows where status is `Completed` |
+| Completion rate | 88.0% | Completed rows divided by all 25 rows |
+| Average score | 83.8 | Average score across completed rows |
+| Completed training hours | 124 | Sum of hours across completed rows |
 
-## Department checks
+The 88.0% rate reconciles to 22 completed records divided by 25 total records.
 
-| Department | Enrolments | Completed | Completion rate | Completed average score |
-|---|---:|---:|---:|---:|
-| Sales | 59 | 39 | 66.10% | 80.05 |
-| Finance | 51 | 33 | 64.71% | 83.76 |
-| Operations | 65 | 42 | 64.62% | 80.19 |
-| HR | 61 | 38 | 62.30% | 79.79 |
-| IT | 53 | 32 | 60.38% | 79.53 |
-| Marketing | 70 | 42 | 60.00% | 81.05 |
+## Verified workflow
 
-## Interpretation rule
+```text
+Excel → Power Query → Power BI → DAX → Dashboard
+```
 
-Completion rate equals completed training records divided by all training
-records. Average score uses completed records only. Training hours and costs are
-descriptive totals from all records in the synthetic dataset.
+- Source type: Excel workbook
+- Power Query table: `Training_data`
+- Model approach: single imported table
+- Time support: automatically generated local date table linked to `Completion_Date`
+- Tools evidenced by the model: Excel, Power Query, Power BI and DAX
+- SQL and BigQuery were not used for this project
+
+## Scope note
+
+These figures describe the portfolio dataset shown in the dashboard. They are descriptive outputs and should not be presented as findings about a named employer or client.

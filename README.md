@@ -1,13 +1,8 @@
 # Learning & Development Dashboard
 
-**Power BI · DAX · BigQuery · SQL · Learning Analytics**
+**Power BI · Power Query · DAX · Excel · Learning Analytics**
 
-An interactive workforce learning dashboard that analyses course participation,
-completion, scores, training hours and costs across departments.
-
-> **Data declaration:** This project uses synthetic sample employee and training
-> data. Employee names are fictitious labels, and no confidential employer,
-> client or learner information is included.
+An interactive workforce learning dashboard for monitoring training completion, scores, completed training hours and participation across departments and courses.
 
 <p align="center">
   <a href="https://app.powerbi.com/view?r=eyJrIjoiYzZjZjExYjAtYzRlYS00NTFhLWFlYmMtYzQwN2QyNTU4NDNjIiwidCI6IjQ1Mzc4OWE0LWM3YjEtNGMzYy04MWUxLWNiNGZmZWZhNDRjMCJ9">
@@ -15,37 +10,30 @@ completion, scores, training hours and costs across departments.
   </a>
 </p>
 
-## Business questions
+## Verified dashboard metrics
 
-- What proportion of training enrolments are completed?
-- Which departments have the strongest completion rates and scores?
-- Which courses have high participation but comparatively low completion?
-- How are training hours and costs distributed?
-- Where may additional learning support or follow-up be useful?
-
-## Verified headline findings
-
-The figures below were reproduced from the repository's three CSV files.
+These figures were verified against the Power BI model exported on 24 September 2026.
 
 | Metric | Result |
 |---|---:|
-| Employees represented | 80 |
-| Courses | 10 |
-| Training records | 359 |
-| Completed training records | 226 |
-| Overall completion rate | 63.0% |
-| Average completed-course score | 80.7 |
-| Recorded training hours | 1,126 |
-| Total recorded training cost | £89,355.99 |
+| Training records | 25 |
+| Participants | 25 |
+| Completed trainings | 22 |
+| Completion rate | 88.0% |
+| Average score for completed training | 83.8 |
+| Completed training hours | 124 |
+| Departments | 4 |
+| Distinct course names | 24 |
 
-Sales had the highest departmental completion rate at **66.1%**, while
-Marketing had the lowest at **60.0%**. Finance achieved the highest average
-score among completed records at **83.8**.
+The figures describe the portfolio dashboard dataset and should not be interpreted as results from a named organisation.
 
-Cybersecurity Awareness had the highest course completion rate at **83.7%**.
-Data Protection Training had the lowest at **46.3%**, followed by Power BI
-Dashboarding at **51.5%**. These findings are descriptive results from synthetic
-data and are not claims about a real organisation.
+## Business questions
+
+- What proportion of training records are completed?
+- How do completion rates vary by department?
+- Which courses show lower completion or engagement?
+- How do completed training hours vary across departments?
+- Where could learning support or follow-up be prioritised?
 
 ## Dashboard preview
 
@@ -54,67 +42,59 @@ data and are not claims about a real organisation.
 ## Dashboard features
 
 - Completion-rate tracking
-- Average completed-course score
-- Total training hours and costs
+- Average score for completed training
+- Completed training hours
+- Participant count
 - Department and course comparisons
 - Completion trends over time
-- Interactive department, course and date filters
+- Department, course and time-period filters
 
 ## Data pipeline
 
-```text
-Synthetic CSV data → BigQuery views → Power BI model → DAX measures → Dashboard
-```
-
-## Data model
-
-- `employees.csv` — employee, department, job level and join date
-- `courses.csv` — course, category, provider, mandatory status and duration
-- `training_records.csv` — enrolment status, scores, hours, feedback and costs
-
-The three tables form a simple star-style model:
+![Learning and Development data pipeline](images/pipeline_diagram.svg)
 
 ```text
-Employees (1) ─── (*) Training Records (*) ─── (1) Courses
+Excel source → Power Query preparation → Power BI model → DAX measures → Interactive dashboard
 ```
 
-See [the data dictionary](docs/data_dictionary.md) and
-[validation report](docs/validation_report.md).
+The project did not use SQL or BigQuery.
+
+## Technical approach
+
+The model imports an Excel worksheet named `Training data` into a single Power BI table called `Training_data`. Power Query promotes the headers and assigns appropriate text, date and whole-number data types.
+
+DAX measures calculate completion rate, average completed-training score, completed training hours, completed training count and distinct participants. Power BI's automatically generated local date table supports time-based filtering.
+
+## Model fields
+
+- `Employee_ID`
+- `Department`
+- `Course_Name`
+- `Completion_Status`
+- `Completion_Date`
+- `Score`
+- `Training_Hours`
+- `Training_Cost`
+- `Feedback_Rating`
+
+See the [verified DAX measures](docs/dax_measures.md) and [model validation report](docs/validation_report.md).
 
 ## Repository structure
 
 ```text
 ├── dashboard/
 │   └── L&D dashboard.pbix
-├── data/
-│   ├── employees.csv
-│   ├── courses.csv
-│   ├── training_records.csv
-│   └── learning_development_dataset.xlsx
 ├── docs/
 │   ├── dax_measures.md
-│   ├── data_dictionary.md
 │   └── validation_report.md
 ├── images/
-├── sql/
-│   ├── 01_create_training_records_view.sql
-│   ├── 02_create_training_metrics_view.sql
-│   └── 03_sql_showcase.sql
+│   ├── dashboard_screenshot.png
+│   ├── laptop_mockup.png
+│   └── pipeline_diagram.svg
 ├── .gitignore
 ├── LICENSE
 └── README.md
 ```
-
-## Reproduce the analysis
-
-1. Review the source tables in `data/`.
-2. Upload the three CSV files to a BigQuery dataset.
-3. Replace `your-project` in the SQL scripts with your Google Cloud project ID.
-4. Run the scripts in numerical order.
-5. Connect Power BI to the resulting tables or views.
-6. Create the relationships shown above.
-7. Add the documented measures from `docs/dax_measures.md`.
-8. Compare the results with `docs/validation_report.md`.
 
 ## Dashboard access
 

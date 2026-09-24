@@ -1,3 +1,0 @@
-Employees: 80
-Courses: 10
-Training records: 359
