@@ -2,20 +2,20 @@
 
 ## Verification source
 
-The final dashboard model and DAX measures were checked against `TRAINING DATA final.vpax`, exported on 24 September 2026. Dashboard headline values were cross-checked against the published portfolio screenshot.
+The model structure and measures were checked against `TRAINING DATA final.vpax`, exported on 24 September 2026. Dashboard headline values were cross-checked against the published portfolio screenshot.
 
-## Published dashboard model
+## Model structure
 
 | Item | Verified value |
 |---|---:|
-| Imported Power BI table | `Training_data` |
+| Imported model table | `Training_data` |
 | Rows | 25 |
 | Distinct employee IDs | 25 |
 | Departments | 4 |
 | Distinct course names | 24 |
 | Completion-status values | 2 |
 
-The final Power BI layer imports a curated Excel worksheet named `Training data`.
+The model imports an Excel worksheet named `Training data`. It is a single-table Power BI model.
 
 ## Verified headline metrics
 
@@ -29,17 +29,18 @@ The final Power BI layer imports a curated Excel worksheet named `Training data`
 
 The 88.0% rate reconciles to 22 completed records divided by 25 total records.
 
-## End-to-end workflow
-
-SQL and BigQuery were used upstream for preparation and analysis. A curated extract was then exported to Excel for the published Power BI dashboard. Consequently, the VPAX records the Excel import used by Power BI but does not describe every upstream platform used in the project.
+## Verified workflow
 
 ```text
-Source data → SQL / BigQuery → Curated Excel extract → Power BI → DAX → Dashboard
+Excel → Power Query → Power BI → DAX → Dashboard
 ```
 
-## Repository scope
-
-The repository also contains expanded supporting sample data and SQL scripts for demonstrating the analytical pipeline. Those files have different record counts from the curated 25-row dashboard extract. Metrics from the expanded support dataset must therefore be labelled separately and must not replace the verified dashboard headline values.
+- Source type: Excel workbook
+- Power Query table: `Training_data`
+- Model approach: single imported table
+- Time support: automatically generated local date table linked to `Completion_Date`
+- Tools evidenced by the model: Excel, Power Query, Power BI and DAX
+- SQL and BigQuery were not used for this project
 
 ## Scope note
 
